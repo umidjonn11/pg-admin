@@ -74,6 +74,18 @@ export const setUp = async () => {
       CONSTRAINT fk_customer FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
     );
   `;
+  const createUsersTableQuery=`
+  CREATE TABLE IF NOT EXISTS Users(
+  user_id SERIAL PRIMARY KEY,
+  first_name VARCHAR(100),
+  last_name VARCHAR(100),
+  password varchar(255) not null,
+  email VARCHAR(255),
+  phone VARCHAR(50),
+  address TEXT
+  );
+  
+  `
 
   const createOrderItemsTableQuery = `
     CREATE TABLE IF NOT EXISTS OrderItems (
@@ -97,6 +109,7 @@ export const setUp = async () => {
         await pool.query(createAuthorsTableQuery),
         await pool.query(createBookAuthorsTableQuery),
         await pool.query(createOrderItemsTableQuery),
+        await pool.query(createUsersTableQuery),
       ]);
       
 

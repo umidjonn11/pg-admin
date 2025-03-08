@@ -9,6 +9,7 @@ import {
   publisherRouter,
   orderitemsRouter,
   bookAuthorsRouter,
+  authRouter
 } from "./routes/index.js";
 
 const app = express();
@@ -20,6 +21,7 @@ app.use("/setup", (req, res, next) => {
   setUp();
 });
 
+app.use("/auth", authRouter);
 app.use("/books", bookRouter);
 app.use("/authors", authorRouter);
 app.use("/bookauthors", bookAuthorsRouter);

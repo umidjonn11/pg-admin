@@ -7,4 +7,5 @@ export * from "./orders.js"
 export * from "./orderitems.js"
 export * from "./customers.js"
 export * from "./publishers.js"
+export * from "./auth.js"
 

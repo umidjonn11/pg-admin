@@ -1,11 +1,12 @@
 import {Router} from "express";
 import { bookAuthorController } from "../controllers/index.js";
+import { authMiddleware } from "../middlewares/auth.middleware.js";
 
 export const bookAuthorsRouter = Router();
 
-bookAuthorsRouter.post("/", bookAuthorController.create);
+bookAuthorsRouter.post("/",authMiddleware, bookAuthorController.create);
 bookAuthorsRouter.get("/", bookAuthorController.findAll);
 bookAuthorsRouter.get("/:id", bookAuthorController.findOne);
-bookAuthorsRouter.put("/:id", bookAuthorController.update);
-bookAuthorsRouter.delete("/:id", bookAuthorController.delete);
+bookAuthorsRouter.put("/:id",authMiddleware, bookAuthorController.update);
+bookAuthorsRouter.delete("/:id",authMiddleware, bookAuthorController.delete);
 

@@ -1,7 +1,12 @@
 {
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.2",
     "express": "^4.21.2",
-    "pg": "^8.13.3"
+    "http-status-codes": "^2.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.13.3",
+    "zod": "^3.24.2"
   },
   "name": "pg",
   "version": "1.0.0",
